@@ -7,7 +7,6 @@ app.use("/static", express.static("public"));
 
 app.use(cors());
 
-let id_count = 8;
 const port = 3000;
 
 app.get("/", (req, res) => {
@@ -15,7 +14,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:id", (req, res) => {
-  res.send(data.find((x) => x.id === +req.params.id));
+  res.send(req.params.id);
 });
 
 app.post("/", (req, res) => {
